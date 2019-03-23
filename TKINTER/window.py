@@ -9,8 +9,14 @@ class Window(Frame) :
     def init_window(self):
         self.master.title("Gui")
         self.pack(fill=BOTH,expand=1)
-        quitButton = Button(self,text = "Quit",command = self.client_exit)
-        quitButton.place(x=0,y=0)
+        menu = Menu(self.master)
+        self.master.config(menu=menu)
+
+        file = Menu(menu)
+        file.add_command(label = 'Exit',command = self.client_exit)
+        menu.add_cascade(label = 'File',menu = file)
+
+
 
     def client_exit (self):
         exit()
