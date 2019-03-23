@@ -16,6 +16,9 @@ class Window(Frame) :
         file.add_command(label = 'Exit',command = self.client_exit)
         menu.add_cascade(label = 'File',menu = file)
 
+        edit = Menu(menu)
+        edit.add_command(label='Undo')
+        menu.add_cascade(label = 'Edit' menu = edit)
 
 
     def client_exit (self):
