@@ -1,10 +1,17 @@
 import tkinter as tk
+from tkinter import ttk
+
 LARGE_FONT = ("Verdana", 12)
 class SeaofBTCapp(tk.Tk) :
 
     def __init__ (self,*args,**kwargs) :
         tk.Tk.__init__(self,*args,**kwargs)
+        tk.Tk.title(self,"BitCoin")
+        # TO DO : 
+        # http://www.mendrugox.net/2014/08/python-tkinter-how-to-embed-your-application-logo-in-your-script/
+        tk.Tk.iconbitmap(self,'@logoLinux.xbm')
         container = tk.Frame(self)
+
 
         container.pack(side='top',fill='both', expand = True )
 
@@ -36,11 +43,11 @@ class StartPage(tk.Frame) :
         label = tk.Label(self,text="Start Page",font =LARGE_FONT)
         label.pack(pady=10,padx=10)
 
-        button1 = tk.Button(self,text = "Visit page1",
+        button1 = ttk.Button(self,text = "Visit page1",
         command = lambda :controller.show_frame(PageOne))
         button1.pack()
 
-        button2 = tk.Button(self,text = "Visit page 2",
+        button2 = ttk.Button(self,text = "Visit page 2",
         command = lambda :controller.show_frame(PageTwo))
         button2.pack()
         #
@@ -54,11 +61,11 @@ class PageOne(tk.Frame) :
         label = tk.Label(self,text="Page One :)",font =LARGE_FONT)
         label.pack(pady=10,padx=10)
 
-        button1 = tk.Button(self,text = "Back to Home",
+        button1 = ttk.Button(self,text = "Back to Home",
         command = lambda :controller.show_frame(StartPage))
         button1.pack()
 
-        button2 = tk.Button(self,text = "PageTwo",
+        button2 = ttk.Button(self,text = "PageTwo",
         command = lambda :controller.show_frame(PageTwo))
         button2.pack()
         # tk.frame()
@@ -68,11 +75,11 @@ class PageTwo(tk.Frame) :
         label = tk.Label(self,text="Page Two :)",font =LARGE_FONT)
         label.pack(pady=10,padx=10)
 
-        button1 = tk.Button(self,text = "PageOne",
+        button1 = ttk.Button(self,text = "PageOne",
         command = lambda :controller.show_frame(PageOne))
         button1.pack()
 
-        button2 = tk.Button(self,text = "Back to Home",
+        button2 = ttk.Button(self,text = "Back to Home",
         command = lambda :controller.show_frame(StartPage))
         button2.pack()
 
