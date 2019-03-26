@@ -5,12 +5,13 @@ LARGE_FONT = ("Verdana", 12)
 class SeaofBTCapp(tk.Tk) :
 
     def __init__ (self,*args,**kwargs) :
+
         tk.Tk.__init__(self,*args,**kwargs)
         tk.Tk.title(self,"BitCoin")
-        # TO DO : 
-        # http://www.mendrugox.net/2014/08/python-tkinter-how-to-embed-your-application-logo-in-your-script/
-        tk.Tk.iconbitmap(self,'@logoLinux.xbm')
         container = tk.Frame(self)
+        img = tk.PhotoImage(file='icon.gif')
+        # tk.Tk.wm_iconbitmap(self,'@icon.gif')
+        self.tk.call('wm','iconphoto',self._w,img)
 
 
         container.pack(side='top',fill='both', expand = True )
