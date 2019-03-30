@@ -21,8 +21,8 @@ class animate():
     xList = []
     yList = []
     for eachLine in dataList :
-        if len(eachLine) <1 :
-            x,y = eachLine.split(',')
+        if len(eachLine) > 1 :
+            x, y = eachLine.split(",")
             xList.append(int(x))
             yList.append(int(y))
     a.clear()
