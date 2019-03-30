@@ -15,7 +15,7 @@ f = Figure(figsize = (5,5), dpi =100)
 a = f.add_subplot(111)
 
 
-class animate():
+def animate(i):
     pullData = open("sampleData.txt","r").read()
     dataList = pullData.split('\n')
     xList = []
