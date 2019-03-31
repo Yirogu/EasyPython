@@ -7,6 +7,10 @@ import matplotlib.animation as animation
 from matplotlib import style
 import tkinter as tk
 from tkinter import ttk
+import urllib
+import json
+import pandas as pd
+import numpy as np
 
 LARGE_FONT = ("Verdana", 12)
 style.use("ggplot")
@@ -44,7 +48,7 @@ class SeaofBTCapp(tk.Tk) :
 
         self.frames = {}
 
-        for F in (StartPage,PageOne,PageTwo,PageThree) :
+        for F in (StartPage,BTCe_Page) :
 
             frame  = F(container,self)
 
@@ -64,20 +68,18 @@ def qf (param):
 class StartPage(tk.Frame) :
     def __init__(self,parent,controller):
         tk.Frame.__init__(self,parent)
-        label = tk.Label(self,text="Start Page",font =LARGE_FONT)
+        label = tk.Label(self,text="""Bitcoin Alpa risk use at your ownrisk.
+        There is no promise of warranty.""",font =LARGE_FONT)
         label.pack(pady=10,padx=10)
 
-        button1 = ttk.Button(self,text = "Visit page1",
+        button1 = ttk.Button(self,text = "Agree",
         command = lambda :controller.show_frame(PageOne))
         button1.pack()
 
-        button2 = ttk.Button(self,text = "Visit page 2",
-        command = lambda :controller.show_frame(PageTwo))
+        button2 = ttk.Button(self,text = "Disagree",
+        command = quit)
         button2.pack()
-        #
-        button3 = tk.Button(self,text = "Graph Page",
-        command = lambda :controller.show_frame(PageThree))
-        button3.pack()
+
 
 class PageOne(tk.Frame) :
     def __init__(self,parent,controller):
@@ -89,9 +91,6 @@ class PageOne(tk.Frame) :
         command = lambda :controller.show_frame(StartPage))
         button1.pack()
 
-        button2 = ttk.Button(self,text = "PageTwo",
-        command = lambda :controller.show_frame(PageTwo))
-        button2.pack()
         # tk.frame()
 class PageTwo(tk.Frame) :
     def __init__(self,parent,controller):
@@ -107,7 +106,7 @@ class PageTwo(tk.Frame) :
         command = lambda :controller.show_frame(StartPage))
         button2.pack()
 
-class PageThree(tk.Frame) :
+class BTCe_Page(tk.Frame) :
     def __init__(self,parent,controller):
         tk.Frame.__init__(self,parent)
         label = tk.Label(self,text="Graph Page",font =LARGE_FONT)
