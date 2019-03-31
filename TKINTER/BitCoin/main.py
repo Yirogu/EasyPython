@@ -20,17 +20,17 @@ a = f.add_subplot(111)
 
 
 def animate(i):
-    pullData = open("sampleData.txt","r").read()
-    dataList = pullData.split('\n')
-    xList = []
-    yList = []
-    for eachLine in dataList :
-        if len(eachLine) > 1 :
-            x, y = eachLine.split(",")
-            xList.append(int(x))
-            yList.append(int(y))
+    dataLink = 'https://api.btcmarkets.net/market/BTC/AUD/trades?limit=2000'
+    data =urllib.request.urlopen(dataLink)
+    data.readall().decode("utf8")
+    data = json.loads(data)
+    data = pd.DataFrame(data)
+    buys = data
+    buys["datestamp"] = np.array(buys["date"]).astype("datetime64[s]")
+    buyDates = buys["datestamp"].tolist()
+
     a.clear()
-    a.plot(xList,yList)
+    a.plot_date(buyDates, buys["price"])﻿
 class SeaofBTCapp(tk.Tk) :
 
     def __init__ (self,*args,**kwargs) :
@@ -80,31 +80,6 @@ class StartPage(tk.Frame) :
         command = quit)
         button2.pack()
 
-
-class PageOne(tk.Frame) :
-    def __init__(self,parent,controller):
-        tk.Frame.__init__(self,parent)
-        label = tk.Label(self,text="Page One :)",font =LARGE_FONT)
-        label.pack(pady=10,padx=10)
-
-        button1 = ttk.Button(self,text = "Back to Home",
-        command = lambda :controller.show_frame(StartPage))
-        button1.pack()
-
-        # tk.frame()
-class PageTwo(tk.Frame) :
-    def __init__(self,parent,controller):
-        tk.Frame.__init__(self,parent)
-        label = tk.Label(self,text="Page Two :)",font =LARGE_FONT)
-        label.pack(pady=10,padx=10)
-
-        button1 = ttk.Button(self,text = "PageOne",
-        command = lambda :controller.show_frame(PageOne))
-        button1.pack()
-
-        button2 = ttk.Button(self,text = "Back to Home",
-        command = lambda :controller.show_frame(StartPage))
-        button2.pack()
 
 class BTCe_Page(tk.Frame) :
     def __init__(self,parent,controller):
