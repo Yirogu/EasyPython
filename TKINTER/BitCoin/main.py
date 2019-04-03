@@ -29,8 +29,6 @@ def animate(i):
     buys["datestamp"] = np.array(buys["date"]).astype("datetime64[s]")
     buyDates = buys["datestamp"].tolist()
 
-    a.clear()
-    a.plot_date(buyDates, buys["price"])﻿
 class SeaofBTCapp(tk.Tk) :
 
     def __init__ (self,*args,**kwargs) :
