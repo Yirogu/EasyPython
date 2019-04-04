@@ -3,8 +3,9 @@ class Pet :
         self.age = age
         self.name = name
         self.rasa = rasa
-        self.names = print(f"the name of dog is {name}")
 
-
+        def names(name):
+            print(f"the name of dog is {name}")
+        self.names = names(name)
 tofik = Pet("Tofik",21,"Bullterier")
 tofik.names
