@@ -9,7 +9,8 @@
 from bokeh.io import output_file, show
 from bokeh.models import ColumnDataSource, GMapOptions
 from bokeh.plotting import gmap
-
+import platform
+import webbrowser
 output_file("gmap.html")
 
 map_options = GMapOptions(lat=30.2861, lng=-97.7394, map_type="roadmap", zoom=11)
@@ -28,4 +29,7 @@ source = ColumnDataSource(
 
 p.circle(x="lon", y="lat", size=15, fill_color="blue", fill_alpha=0.8, source=source)
 
-show(p)
+if platform.system() == "Linux" :
+    webbrowser.open('gmap.html')
+# else :
+#     show(p)
