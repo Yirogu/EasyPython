@@ -7,17 +7,12 @@ for num in range(len(numbers)) :
     if tmp > inUse :
         numbers[num] = tmp
         numbers[num-1] = inUse
-
-
-
     else :
         tmp = inUse
-
     print(numbers)
 
-        # print(f'{tmp} is bigger {numbers[num]}')
 
-    tmp = numbers[num]
+
 
 
 
