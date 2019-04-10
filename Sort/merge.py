@@ -1,6 +1,14 @@
 numbers = [5,7,6,1,9,2,8,4,3]
-while True :
-    for idx,num in numbers :
-        print(num)
-        if idx == len(numbers) :
-            return False
+diveNums = []
+x = True
+while x == True :
+    if len(numbers)%2 == 0 :
+        for num in range( (int (len(numbers) /2)) ) :
+            print(num)
+
+    else :
+        for num in range( (int (len(numbers) /2)) + 1 ) :
+            print(num)
+
+    # if num+1 == len(numbers) :
+    x = False
