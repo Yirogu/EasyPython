@@ -25,6 +25,8 @@ while x == True :
 
     total.append(diveNums)
     diveNums = []
+    numbers = total
+
 
 
 
@@ -32,3 +34,4 @@ while x == True :
     print(i)
     print(total)
     x = False
+print(numbers[0])
