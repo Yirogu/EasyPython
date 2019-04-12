@@ -15,4 +15,5 @@ ga = pyeasyga.GeneticAlgorithm(data)
 
 ga.fitness_function = fitness
 ga.run()
-print (ga.create_individual())
+simple = ga.create_individual(data)
+print(simple)
