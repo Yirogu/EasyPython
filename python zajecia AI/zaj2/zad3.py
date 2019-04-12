@@ -63,7 +63,7 @@ def reachable_states(state):
 
 
 
-def breadth_first_search(start_state,target_state):
+def depth_first_search(start_state,target_state):
 #do budowy drzewa potrzebujemy dla kazdego wierzcholka id
 #bedziemy je pozniej inkrementowac
 
@@ -110,7 +110,7 @@ def breadth_first_search(start_state,target_state):
 #print(breadth_first_search("Tczew","Gdansk"))
 
 start = time.time()
-breadth_first_search("Gdansk","Ustka")
+depth_first_search("Gdansk","Ustka")
 end = time.time()
 print(end - start)
 
