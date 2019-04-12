@@ -1,10 +1,18 @@
 from treelib import Tree
 import time
 
-def duplicate_node_path_check(tree, node):
-    check_node = tree.get_node(node)
-    current_node = check_node
-    print(current_node)
+def dupilcate_node_path_check(tree,node,tag):
+
+    current_node = node
+
+
+    while not current_node.is_root():
+        current_node = tree.parent(current_node.identifier)
+        if current_node.tag == tag:
+            #print("z funkcji node.tag",node.tag)
+            return True
+    return False
+
 
     while not current_node.is_root():
         current_node = tree.parent(current_node.identifier)
@@ -51,6 +59,7 @@ def reachable_states(state):
 
     if state == "Chojnice":
         return [["Bytow", 65], ["Koscierzyna", 70]]
+    return []
 
 
 
@@ -90,12 +99,12 @@ def breadth_first_search(start_state,target_state):
         del(fifo_queue[0])
         #a nastepnie dodaj stany osiagalne z niego
         #na koniec kolejki i do drzewa
-        if not duplicate_node_path_check(tree,current_node.identifier):
-            for elem in reachable_states(current_node.tag):
+        for elem in reachable_states(current_node.tag):
+            if dupilcate_node_path_check(tree,current_node,elem[0]) == False:
                 id += 1
                 new_elem = tree.create_node(elem[0], id, parent = current_node.identifier)
                 fifo_queue.insert(0,new_elem)
-        print("time limit exceeded")
+    print("time limit exceeded")
 
 
 #print(breadth_first_search("Tczew","Gdansk"))
