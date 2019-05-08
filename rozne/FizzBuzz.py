@@ -146,7 +146,8 @@ def indivisible(number):
     if number % 3 != 0 and number % 5 != 0 :
         print(number)
     else:
-        print(fizzBuzz(number))
+        fizzBuzz(number)
+
 
 
 
