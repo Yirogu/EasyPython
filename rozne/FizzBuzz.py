@@ -161,8 +161,8 @@ seventh = end7 - start7
 
 
 #the fastest solution
-if seventh < six :
-    print(f" the seventh is faster {six - seventh } ")
+if third < six :
+    print(f" the third is faster {six - third } ")
 else :
-    print(f" the six is faster {seventh - fifth} ")
+    print(f" the six is faster {third - six} ")
 print(six,seventh)
