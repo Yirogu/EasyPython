@@ -13,32 +13,34 @@ def fizzBuzz(number):
         text = "Fizz"
     if number % 5 == 0 :
         text += "Buzz"
-    return text
+    if text == "":
+        text = number
+    print(text)
 
 
 
 for number in range(1,101):
-    print(f"{number} result is {fizzBuzz(number)}")
+    fizzBuzz(number)
 end = time.clock()
-first = round(end - start,9)
+first = end - start
 
 #Time  to execute : 0.00030799999999999925,0.0003490000000000021,0.0004289999999999988
 
 #Second Idea without use def
 
 
-
-start2 = time.clock()
-for number in range(1,101):
-    text = ""
-    if number % 3 == 0 :
-        text = "Fizz"
-    if number % 5 == 0 :
-        text += "Buzz"
-    print(f"{number} result is {text}")
-end2 = time.clock()
-second = end2 - start2
-second = round(second,9)
+#
+# start2 = time.clock()
+# for number in range(1,101):
+#     text = ""
+#     if number % 3 == 0 :
+#         text = "Fizz"
+#     if number % 5 == 0 :
+#         text += "Buzz"
+#     print(f"{number} result is {text}")
+# end2 = time.clock()
+# second = end2 - start2
+# second = round(second,9)
 
 #Simple resolution from internet
 start3 = time.clock()
@@ -52,10 +54,53 @@ for num in range(1, 101):
         string = str(num)
     print(string)
 stop3 = time.clock()
-third = start3 - stop3
+third = stop3 -start3
+
+# fourth Idea
+start4 = time.clock()
+def fizzBuzz(number):
+    text = ""
+    if number % 15 == 0 :
+        return "FizzBuzz"
+    if number % 3 == 0 :
+        return "Fizz"
+    if number % 5 == 0:
+        return "Buzz"
+    else :
+        return number
+
+
+
+
+for number in range(1,101):
+    print(fizzBuzz(number))
+end4 = time.clock()
+fourth = end4 - start4
+
+# fifth Idea
+start5 = time.clock()
+def fizzBuzz(number):
+    text = ""
+    if number % 15 == 0 :
+        return "FizzBuzz"
+    if number % 3 == 0 :
+        return "Fizz"
+    if number % 5 == 0:
+        return "Buzz"
+    else :
+        return number
+
+
+
+
+for number in range(1,101):
+    print(fizzBuzz(number))
+end5 = time.clock()
+fifth = end5 - start5
+
 #the fastest solution
-if first < third :
-    print(f" the first is faster {third - first } ")
+if first < fourth :
+    print(f" the first is faster {fourth - first } ")
 else :
-    print(f" the third is faster {first - third} ")
+    print(f" the fourth is faster {first - fourth} ")
 print(first,third)
