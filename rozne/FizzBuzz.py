@@ -16,6 +16,6 @@ def fizzBuzz(number):
 
 start = time.clock()
 for number in range(1,100):
-    print(fizzBuzz(number))
+    print(f"{number} result is {fizzBuzz(number)}")
 end = time.clock()
 print(start - end)
