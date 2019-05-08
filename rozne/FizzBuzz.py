@@ -29,18 +29,18 @@ first = end - start
 #Second Idea without use def
 
 
-#
-# start2 = time.clock()
-# for number in range(1,101):
-#     text = ""
-#     if number % 3 == 0 :
-#         text = "Fizz"
-#     if number % 5 == 0 :
-#         text += "Buzz"
-#     print(f"{number} result is {text}")
-# end2 = time.clock()
-# second = end2 - start2
-# second = round(second,9)
+
+start2 = time.clock()
+for number in range(1,101):
+    text = ""
+    if number % 3 == 0 :
+        text = "Fizz"
+    if number % 5 == 0 :
+        text += "Buzz"
+    print(f"{number} result is {text}")
+end2 = time.clock()
+second = end2 - start2
+second = round(second,9)
 
 #Simple resolution from internet
 start3 = time.clock()
