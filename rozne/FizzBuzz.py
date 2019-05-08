@@ -131,9 +131,37 @@ for number in range(1,101):
 end6 = time.clock()
 six = end6 - start6
 
+# seventh Idea
+start7 = time.clock()
+
+def fizzBuzz(number):
+    text = ""
+    if number % 3 == 0 :
+        text = "Fizz"
+    if number % 5 == 0 :
+        text += "Buzz"
+    print(text)
+
+def indivisible(number):
+    if number % 3 != 0 and number % 5 != 0 :
+        print(number)
+    else:
+        print(fizzBuzz(number))
+
+
+
+
+
+
+for number in range(1,101):
+    indivisible(number)
+end7 = time.clock()
+seventh = end7 - start7
+
+
 #the fastest solution
-if first < six :
-    print(f" the first is faster {six - first } ")
+if seventh < six :
+    print(f" the seventh is faster {six - seventh } ")
 else :
-    print(f" the six is faster {first - fifth} ")
-print(first,six)
+    print(f" the six is faster {seventh - fifth} ")
+print(six,seventh)
