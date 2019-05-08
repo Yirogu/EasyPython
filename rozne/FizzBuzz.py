@@ -105,7 +105,7 @@ end5 = time.clock()
 fifth = end5 - start5
 
 #the fastest solution
-if first < fourth :
+if first < fifth :
     print(f" the first is faster {fifth - first } ")
 else :
     print(f" the fifth is faster {first - fifth} ")
