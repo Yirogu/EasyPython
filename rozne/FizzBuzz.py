@@ -104,9 +104,36 @@ for number in range(1,101):
 end5 = time.clock()
 fifth = end5 - start5
 
+# six Idea
+start6 = time.clock()
+
+def fizzBuzz(number):
+    text = ""
+    if number % 3 == 0 :
+        text = "Fizz"
+    if number % 5 == 0 :
+        text += "Buzz"
+    return text
+
+def indivisible(number):
+    if number % 3 != 0 and number % 5 != 0 :
+        return number
+    else:
+        return fizzBuzz(number)
+
+
+
+
+
+
+for number in range(1,101):
+    print(indivisible(number))
+end6 = time.clock()
+six = end6 - start6
+
 #the fastest solution
-if first < fifth :
-    print(f" the first is faster {fifth - first } ")
+if first < six :
+    print(f" the first is faster {six - first } ")
 else :
-    print(f" the fifth is faster {first - fifth} ")
-print(first,fifth)
+    print(f" the six is faster {first - fifth} ")
+print(first,six)
