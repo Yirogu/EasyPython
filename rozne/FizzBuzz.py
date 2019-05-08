@@ -79,28 +79,34 @@ fourth = end4 - start4
 
 # fifth Idea
 start5 = time.clock()
+
 def fizzBuzz(number):
-    text = ""
     if number % 15 == 0 :
         return "FizzBuzz"
     if number % 3 == 0 :
         return "Fizz"
-    if number % 5 == 0:
+    else:
         return "Buzz"
-    else :
+
+def indivisible(number):
+    if number % 3 != 0 and number % 5 != 0 :
         return number
+    else:
+        return fizzBuzz(number)
+
+
 
 
 
 
 for number in range(1,101):
-    print(fizzBuzz(number))
+    print(indivisible(number))
 end5 = time.clock()
 fifth = end5 - start5
 
 #the fastest solution
 if first < fourth :
-    print(f" the first is faster {fourth - first } ")
+    print(f" the first is faster {fifth - first } ")
 else :
-    print(f" the fourth is faster {first - fourth} ")
-print(first,third)
+    print(f" the fifth is faster {first - fifth} ")
+print(first,fifth)
