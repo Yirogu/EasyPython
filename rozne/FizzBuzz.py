@@ -18,4 +18,5 @@ start = time.clock()
 for number in range(1,100):
     print(f"{number} result is {fizzBuzz(number)}")
 end = time.clock()
-print(start - end)
+print(end - start)
+#With text
